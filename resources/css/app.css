@@ -1,95 +1,206 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
+body {
     margin: 0;
     padding: 0;
     color: #333;
 }
+.anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 6vh;
+    height: 6vh;
+    background-color: rgba(172, 255, 47, 0.7);
+    border-radius: 50%;
+    opacity: 0; /* Скрываем по умолчанию */
+    visibility: hidden; /* Скрываем по умолчанию */
+    transition: opacity 0.5s ease; /* Плавный переход */
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.anchor.visible {
+    opacity: 1; /* Показываем элемент */
+    visibility: visible;
+}
+
+.anchor > svg {
+    width: 30px;
+    height: auto;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* Поднимает кнопку немного вверх */
+    }
+}
+/* --------------------навбар----------------------------- */
 .navbar {
-    min-height: 120px; 
-    max-width: 1800px;
+    min-height: 80px;
     margin: auto;
+    position: fixed;
+    z-index: 5;
+    top: 0;
 }
-.img-fluid{
-    max-height: 120px;
-}
-.nav-link-style{
-    font-size: 26px;
-    font-weight: 600;
+.nav-item{
     margin: 0 20px;
 }
-.navbar-text{
-    padding: 0px !important;
-    margin-left: 20px;
+.nav-link-style {
+    position: relative;
 }
-.phone-link{
-    font-size: 30px;
+.small-navbar-toggler {
+    border: none;
+
+}
+
+.start-content-box {
+    margin-top: 100px;
+}
+
+.bg-image {
+    width: 100%;
+    height: auto;
+}
+
+.img-fluid {
+    max-height: 80px;
+}
+
+.nav-link-style {
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.navbar-text {
+    padding: 0px !important;
+    margin-left: 1vw;
+}
+
+.phone-link {
+    font-size: 1.5vw;
     font-weight: 1000;
 }
-.work-time{
-    font-size: 20px;
+
+.work-time {
+    font-size: 1vw;
 }
 
 /* ------------таблицы преимуществ----------------------- */
-.li{
+.li {
     list-style: none;
 }
-.li-disc-padding{
-    padding: 10px;
+
+.li-disc-padding {
+    padding: 2vw;
+}
+
+.mt-list {
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+}
+.mt-list>p{
+    margin-bottom: 0.1vw;
 }
 /* ---------------------таблицы цен-------------------------------- */
-.custom-list-text{
-    font-size: 40px;
+.custom-list-text {
+    font-size: 2vw;
     font-weight: 700;
 }
-.small{
+.p-price{
+    margin: 2vw auto;
+}
+.small {
     font-size: medium !important;
 }
+
 /* ------------------стили к текстам ко всем страницам------------------------- */
+.pt {
+    padding-top: 5vw;
+}
+
 .custom-width {
     width: 1200px;
-    font-weight: 600; 
-  }
-  .brief_information{
+    font-weight: 600;
+}
+
+.brief_information {
     margin: auto;
 }
-  .start_text{
+.brief_information>p {
+    margin-bottom: 2vw;
+}
+
+.start_text {
     margin: auto;
-    font-size: 86px;
+    font-size: 5vw;
     font-weight: 1000;
+    text-align: center;
     color: #333;
-    padding-top: 60px;
+    padding-bottom: 2vw;
 }
-.custom-base-text{
-    font-size: 30px;
+.anchor-offset {
+    scroll-margin-top: 100px; 
 }
-.button-base {
+.button-star-text {
     background: none;
-    border: #333 3px solid;
-    border-radius: 10px;
-    padding: 15px 60px;
-    font-size: 24px;
+    border: none;
+}
+
+.button-star-text {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+p {
+    margin-bottom: none !important;
+}
+
+
+.custom-base-text {
+    font-size: 1.5vw;
+}
+
+.button-base {
+    width: 16vw;
+    background: none;
+    border: #333 0.2vw solid; 
+    border-radius: 0.5vw; 
+    padding: 1vw 2vw; 
+    font-size: 1vw; 
     font-weight: 700;
-    margin-top: 60px;
+    margin-top: 2vw;
+    margin-bottom: 4vw;
     position: relative;
     overflow: hidden;
     transition: background-position 0.3s ease;
-    background: linear-gradient(90deg, #ccc 0%, transparent 100%);
     background-size: 200%;
     background-position: 100%;
 }
+
 
 .button-base:hover {
     background-position: 0;
 }
+/* ---------------------изображения------------------------------------- */
 .button-galery {
+    width: 16vw;
     background: none;
-    border: #333 3px solid;
-    border-radius: 10px;
-    padding: 15px 60px;
-    font-size: 24px;
+    border: #333 0.2vw solid; 
+    border-radius: 0.5vw; 
+    padding: 1vw 2vw; 
+    font-size: 1vw; 
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 1vw; 
+    margin-bottom: 1vh;
     position: relative;
     overflow: hidden;
     transition: background-position 0.3s ease;
@@ -97,19 +208,32 @@ body{
     background-size: 200%;
     background-position: 100%;
 }
+.full-width-image {
+    width: 100%;      
+    height: auto;     
+    max-height: 100vh; 
+    object-fit: contain; 
+}
+
+
 /* ----------------форма отправки------------------------ */
+.pt-form{
+    margin: 3vw auto;
+}
 .registration-form {
     background-color: white;
-    border-radius: 12px;
-    padding: 3rem;
+    border-radius: 1vw;
+    padding: 3vw;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     max-width: 700px;
     height: max-content;
     width: 100%;
 }
-.registration-form>p{
+
+.registration-form>p {
     font-weight: 700;
 }
+
 .registration-form input[type="text"],
 .registration-form input[type="email"],
 .registration-form input[type="password"] {
@@ -135,7 +259,7 @@ body{
     padding: 10px 20px;
     font-size: 25px;
     font-weight: 700;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
     border: 3px solid #333;
     border-radius: 5px;
     text-align: center;
@@ -143,195 +267,265 @@ body{
 }
 
 .file-upload:hover {
-    background-color: #ffc107; 
+    background-color: #ffc107;
 }
 
 .file-upload input[type="file"] {
     display: none;
 }
 
-.comment{
+.comment {
     width: 100%;
     resize: vertical;
     padding: 20px;
     border-radius: 5px;
     transition: 0.5s;
 }
-.comment:focus{
+
+.comment:focus {
     border-color: #ff8c00;
     outline: none;
 }
-
-.registration-form button {
-    width: 200px;
-    padding: 0.8rem;
-    margin: auto;
-    margin-top: 1rem;
-    font-size: 25px;
-    border: none;
-    border-radius: 8px;
-    background-color: #ff8c00;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.registration-form button:hover {
-    background-color: #e07b00;
-}
-
 /* -------------------------footer-------------------------------- */
-footer{
+footer {
     text-align: center;
 }
-.discription{
+
+.discription {
     list-style: none;
     color: whitesmoke;
     padding: 5px 20px;
     font-weight: 700;
     text-align: center;
 }
-.footer>p{
+
+.footer>p {
     margin: 0;
 }
-.footer-content{
+
+.footer-content {
     max-width: 700px;
     margin: auto;
 }
-.footer-nav{
+
+.footer-nav {
     width: 100%;
 }
-.footer-nav>a{
+
+.footer-nav>a {
     color: whitesmoke;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-decoration: none;
     margin: 10px 20px;
 }
-.footer-contact{
+
+.footer-contact {
     width: 100%;
     text-align: center;
     margin: auto;
     color: whitesmoke;
 }
-.footer-contact>p{
+
+.footer-contact>p {
     margin: 5px auto;
 }
-.footer-comment{
+
+.footer-comment {
     color: whitesmoke;
 }
+
 /* ------------------------------------------------------ */
 
-.card_header>img{
+.card_header>img {
     width: 200px;
     height: auto;
 }
+
 /* ----------------------------- */
-@media (max-width: 1400px){
-    .phone-link{
-        font-size: 25px;
+
+@media (max-width: 1400px) {
+    .custom-base-text {
+        font-size: 2vw;
     }
-    .work-time{
-        font-size: 16px;
+    .button-base {
+        font-size: 1vw; 
+    }
+    .button-galery {
+        font-size: 1vw; 
+    }
+    .nav-link-style {
+        font-size: 1.5vw;
     }
 }
+
 @media (max-width: 1200px) {
-    .img-fluid{
+    .img-fluid {
         max-height: 80px;
     }
-    .phone-link{
-        font-size: 22px;
-    }
-    .work-time{
-        font-size: 16px;
-    }
-    .custom-base-text{
+    .custom-base-text {
         font-size: 25px;
     }
-    .start_text{
-        font-size: 72px;
-    }
     .custom-width {
-      max-width: 700px; 
-    }
-    .nav-link-style{
-        font-size: 20px;
-    }
-    .custom-list-text{
-        font-size: 30px;
-        font-weight: 700;
-    }
-    .button-base{
-        padding: 15px 50px;
-        font-size: 20px;;
-    }
-    .button-galery{
-        padding: 15px 50px;
-        font-size: 20px;;
+        max-width: 700px;
     }
     .file-upload {
         font-size: 25px;
     }
-  }
-  @media (max-width: 1200px){
+}
 
-  }
-@media (max-width: 760px) {
-    .start_text{
-        font-size: 50px;
+@media (max-width: 992px){
+    .nav-item{
+        margin: 0;
     }
-    .custom-base-text{
-        font-size: 22px;
+}
+@media (min-width: 992px){
+    .nav-link-style.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px; 
+        left: 0;
+        width: 100%;
+        height: 3px; 
+        background-color: #333; 
+    }
+}
+
+@media (max-width: 760px) {
+    .anchor > svg {
+        width: 15px;
+    }
+    .navbar {
+        min-height: 50px;
+    }
+    .img-fluid {
+        max-height: 50px;
+    }
+    .anchor-offset {
+        scroll-margin-top: 60px; 
+    }
+    .start-content-box {
+        margin-top: 80px;
+    }
+    #imageContainer .col {
+        max-width: 25%; 
+        flex: 0 0 25%; 
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card-img-top {
+        height: auto;
+        max-height: 120px; 
+        object-fit: cover;
+    }
+    .button-base {
+        font-size: 2vw; 
+        width: 200px;
+    }
+    .button-galery {
+        font-size: 2vw; 
+        width: 200px;
+    }
+    .custom-base-text {
+        font-size: 3vw;
+    }
+
+    .custom-width {
+        max-width: 100%;
+    }
+    .footer-content {
+        width: 100%;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="email"],
+    .registration-form input[type="password"] {
+        padding: 0.5rem;
+        font-size: medium;
+    }
+
+    .file-upload {
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+    .footer-nav>a {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 460px) {
+    .navbar {
+        min-height: 30px;
+    }
+    .img-fluid {
+        max-height: 30px;
+    }
+    .anchor-offset {
+        scroll-margin-top: 40px; 
+    }
+    .start-content-box {
+        margin-top: 60px;
+    }
+    .small-navbar-toggler {
+        border: none;
+        width: 20px; /* Установите ширину */
+        height: 20px; /* Установите высоту */
+    }
+    .small-navbar-toggler:focus{
+        border: none;
+        box-shadow: none;
+    }
+    .nav-link-style {
+        font-size: 2vw;
+    }
+    .button-base {
+        font-size: 1.5vw; 
+        width: 100px;
+    }
+    .button-galery {
+        font-size: 1.5vw; 
+        width: 100px;
+    }
+    .small-navbar-toggler .navbar-toggler-icon {
+        width: 20px;
+        height: 20px;
     }
     .custom-width {
-      max-width: 100%; 
+        max-width: 100%;
     }
-    .custom-list-text{
-        font-size: 20px;
-        font-weight: 700;
+    .custom-base-text {
+        font-size: 3vw;
     }
-    .button-base{
-        padding: 10px 40px;
-        font-size: 20px;
+    .small {
+        font-size: xx-small !important;
     }
-    .button-galery{
-        padding: 10px 40px;
-        font-size: 20px;
-    }
-    .footer-content{
-        width: 100%;
+    .registration-form>p {
+        margin-bottom: 5px;
     }
     .registration-form input[type="text"],
     .registration-form input[type="email"],
     .registration-form input[type="password"] {
-    padding: 0.5rem;
+        padding: 0.1rem;
+        font-size: small;
+        border-radius: 5px;
     }
     .file-upload {
-        font-size: 20px;
+        font-size: 8px;
+        padding: 2px 5px;
+        border: 1px solid #333;
+        border-radius: 2px;
     }
-    .registration-form button {
-        font-size: 20px;
-    }
-  }
-@media (max-width: 460px) {
-    .custom-width {
-      max-width: 100%; 
-    }
-    .custom-list-text{
-        font-size: 15px;
-    }
-    .button-base{
-        padding: 10px 30px;
-        font-size: 16px;
-    }
-    .button-galery{
-        padding: 10px 30px;
-        font-size: 16px;
-    }
-    .registration-form button {
-        font-size: 15px;
-    }
-    .footer-contact{
+    /* .registration-form button {
+        font-size: 12px;
+        padding: 5px 15px;
+        width: max-content;
+        border-radius: 4px;
+    } */
+    
+    /* ------------------------------------------------ */
+    .footer-contact {
         width: 100%;
     }
-  }
-  
+}
